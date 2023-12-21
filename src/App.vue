@@ -5,8 +5,8 @@
     />
     <HomeBlock id="home" />
     <AboutBlock id="about"/>
-    <LocationBlock />
-    <PriceBlock />
+    <LocationBlock id="location" />
+    <PriceBlock id="price" />
   </div>
 </template>
 
