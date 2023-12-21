@@ -9,5 +9,6 @@
   background: url(~@/assets/bckg_img/crsft_frst_1.jpg);
   background-size: cover;
   background-position: center;
+  z-index: 10;
   // transform: translate3d(0, calc(var(--scroll-top) / 2), 0);
 }

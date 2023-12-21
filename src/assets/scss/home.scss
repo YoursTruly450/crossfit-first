@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: center;
   will-change: transform;
-  // transform: translate3d(0, calc(var(--scroll-top) / 2), 0);
+  transform: translate3d(0, calc(var(--scroll-top) / 2), 0);
 
   &__block {
     width: 100%;
