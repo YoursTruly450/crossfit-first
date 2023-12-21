@@ -24,7 +24,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
   height: 5px;
   background-color: transparent;
 }
@@ -45,11 +45,21 @@ a {
   background-color: #629727;
 }
 
+:root {
+  --header-height: 68px;
+  --main-width: 1440px;
+}
+
 .main {
+  position: relative;
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   background: #101010;
-  overflow: hidden;
+}
+
+@media screen and (max-width: 1199px) {
+  // :root {
+  //   --header-height: 120px;
+  // }
 }

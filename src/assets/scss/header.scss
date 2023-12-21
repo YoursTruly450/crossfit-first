@@ -1,0 +1,48 @@
+@import '@/assets/scss/main.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  &__block {
+    width: var(--main-width);
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+
+  &__links {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 40px;
+  }
+
+  &__link {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fafafa;
+    margin-right: 24px;
+
+    &:hover {
+      color: #FFCB00;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
