@@ -9,6 +9,7 @@
   background: url(~@/assets/bckg_img/crsft_frst_5.jpg);
   background-size: cover;
   background-position: center;
+  will-change: transform;
   // transform: translate3d(0, calc(var(--scroll-top) / 2), 0);
 
   &__block {
