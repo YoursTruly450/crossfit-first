@@ -22,7 +22,6 @@ export default {
 
   computed: {
     backGroundImg() {
-      console.log(process.env.NODE_ENV);
       const bckgUrl = process.env.NODE_ENV === 'production' ? "background: url('/crossfit-first/background/" : "background: url('/background/";
       const bckgrndStyle = 'center center / cover;';
       const transform = `top: -${this.scrollHeight}px;`;
