@@ -22,12 +22,14 @@ export default {
 
   computed: {
     backGroundImg() {
+      console.log(process.env.NODE_ENV);
+      const bckgUrl = process.env.NODE_ENV === 'production' ? "background: url('/crossfit-first/background/" : "background: url('/background/";
       const bckgrndStyle = 'center center / cover;';
       const transform = `top: -${this.scrollHeight}px;`;
-      let style = `background: url('/background/crsft_frst_3.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 1) style = `background: url('/background/crsft_frst_5.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 2) style = `background: url('/background/crsft_frst_1.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 3) style = `background: url('/background/crsft_frst_6.jpg') ${bckgrndStyle}${transform}`;
+      let style = `${bckgUrl}crsft_frst_3.jpg') ${bckgrndStyle}${transform}`;
+      if (this.offsetTop === 1) style = `${bckgUrl}crsft_frst_5.jpg') ${bckgrndStyle}${transform}`;
+      if (this.offsetTop === 2) style = `${bckgUrl}crsft_frst_1.jpg') ${bckgrndStyle}${transform}`;
+      if (this.offsetTop === 3) style = `${bckgUrl}crsft_frst_6.jpg') ${bckgrndStyle}${transform}`;
       return style;
     },
   },
