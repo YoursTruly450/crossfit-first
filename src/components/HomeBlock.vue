@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <div class="home__block"></div>
+  <div class="home" id="home">
   </div>
 </template>
 

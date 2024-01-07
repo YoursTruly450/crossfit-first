@@ -2,11 +2,16 @@
   <div id="app" class="main">
     <MainHeader
       :links="blocks"
+      :offsetTop="offsetTop"
     />
-    <HomeBlock id="home" />
-    <AboutBlock id="about"/>
-    <LocationBlock id="location" />
-    <PriceBlock id="price" />
+    <BackgroundLayer
+      :offsetTop="offsetTop"
+      :scrollHeight="scrollHeight"
+    />
+    <HomeBlock />
+    <AboutBlock />
+    <LocationBlock />
+    <PriceBlock />
   </div>
 </template>
 
@@ -18,12 +23,14 @@ import HomeBlock from '@/components/HomeBlock.vue';
 import AboutBlock from '@/components/AboutBlock.vue';
 import LocationBlock from '@/components/LocationBlock.vue';
 import PriceBlock from '@/components/PriceBlock.vue';
+import BackgroundLayer from '@/components/BackgroundLayer.vue';
 
 export default {
   name: 'App',
 
   components: {
     MainHeader,
+    BackgroundLayer,
     HomeBlock,
     AboutBlock,
     LocationBlock,
@@ -54,12 +61,17 @@ export default {
           anchor: 'price',
         },
       ],
+      offsetTop: 1,
+      scrollHeight: 0,
     };
   },
 
   created() {
     window.addEventListener('scroll', () => {
       document.body.style.cssText = `--scroll-top: ${window.scrollY}px`;
+      const ratio = Math.floor(window.scrollY / window.innerHeight);
+      this.offsetTop = ratio + 1;
+      this.scrollHeight = (window.scrollY - ratio * window.innerHeight) * 0.2;
     });
   },
 };

@@ -44,8 +44,32 @@
       text-shadow: 0 0 8px #fafafa;
     }
 
+    &-active {
+      color: #1ebe1e;
+      text-shadow: 0 0 8px #fafafa;
+    }
+
     &:last-child {
       margin-right: 0px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    margin-left: auto;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__contact {
+    display: flex;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    margin-left: 12px;
+
+    &:first-child {
+      margin-left: 0px;
     }
   }
 }

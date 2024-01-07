@@ -12,8 +12,29 @@
           :key="block.id"
           :href="`#${block.anchor}`"
           class="header__link"
+          :class="{'header__link-active': offsetTop === block.id}"
         >
           {{ block.name }}
+        </a>
+      </div>
+      <div class="header__contacts">
+        <a href="https://www.instagram.com/sputnik_functional_cf?igsh=czkwbHJ1NzdrZzcw" target="_blank" class="header__contact">
+          <img 
+            :src="require('@/assets/icons/instagram.png')" 
+            alt="инстаграм"
+          >
+        </a>
+        <a href="https://t.me/+EeCjrnADnuNlN2My" target="_blank" class="header__contact">
+          <img 
+            :src="require('@/assets/icons/telegram.png')" 
+            alt="телеграм" 
+          >
+        </a>
+        <a href="https://vk.com/sputnik_functional_cf" target="_blank" class="header__contact">
+          <img 
+            :src="require('@/assets/icons/vk.png')" 
+            alt="ВК" 
+          >
         </a>
       </div>
     </div>
@@ -30,6 +51,10 @@ export default {
     links: {
       type: Array,
       default: () => [],
+    },
+    offsetTop: {
+      type: Number,
+      default: 1,
     },
   },
 };

@@ -1,15 +1,9 @@
 @import '@/assets/scss/main.scss';
 
 .home {
-  width: 100%;
+  width: var(--main-width);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url(~@/assets/bckg_img/crsft_frst_5.jpg);
-  background-size: cover;
-  background-position: center;
-  z-index: 10;
-  will-change: transform;
-  transform: translate3d(0, calc(var(--scroll-top) / 2), 0);
 }
