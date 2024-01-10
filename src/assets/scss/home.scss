@@ -1,9 +1,57 @@
 @import '@/assets/scss/main.scss';
 
 .home {
-  width: var(--main-width);
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding-top: var(--header-height);
+  z-index: 1;
+
+  &__wrapper {
+    width: var(--main-width);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__presentation {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: #0a0a0a;
+  }
+
+  &__logo {
+    width: 300px;
+    height: 300px;
+  }
+
+  &__description {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__article {
+      margin-top: 24px;
+      font-size: 1.25em;
+    }
+
+    &__spheres {
+      margin-top: 12px;
+      font-size: 1em;
+    }
+  }
 }

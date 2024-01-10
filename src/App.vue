@@ -69,7 +69,8 @@ export default {
   created() {
     window.addEventListener('scroll', () => {
       document.body.style.cssText = `--scroll-top: ${window.scrollY}px`;
-      const ratio = Math.floor(window.scrollY / window.innerHeight);
+      const ratio = Math.round(window.scrollY / window.innerHeight);
+      // const ratioFloor = Math.floor(window.scrollY / window.innerHeight);
       this.offsetTop = ratio + 1;
       this.scrollHeight = (window.scrollY - ratio * window.innerHeight) * 0.2;
     });

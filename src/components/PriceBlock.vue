@@ -1,5 +1,8 @@
 <template>
-  <div class="price" id="price"></div>
+  <div class="price" id="price">
+    <div class="price__wrapper"></div>
+    <div class="price__presentation"></div>
+  </div>
 </template>
 
 <script>

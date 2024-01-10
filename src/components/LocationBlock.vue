@@ -1,5 +1,8 @@
 <template>
-  <div class="location" id="location"></div>
+  <div class="location" id="location">
+    <div class="location__wrapper"></div>
+    <div class="location__presentation"></div>
+  </div>
 </template>
 
 <script>
