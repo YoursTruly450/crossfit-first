@@ -5,8 +5,12 @@
       :offsetTop="offsetTop"
     />
     <BackgroundLayer
-      :offsetTop="offsetTop"
+      v-for="block in blocks"
+      :key="block.id"
+      :offsetTop="block.id"
       :scrollHeight="scrollHeight"
+      :scrollRatio="scrollRatio"
+      :ratio="ratio"
     />
     <HomeBlock />
     <AboutBlock />
@@ -23,6 +27,7 @@ import HomeBlock from '@/components/HomeBlock.vue';
 import AboutBlock from '@/components/AboutBlock.vue';
 import LocationBlock from '@/components/LocationBlock.vue';
 import PriceBlock from '@/components/PriceBlock.vue';
+
 import BackgroundLayer from '@/components/BackgroundLayer.vue';
 
 export default {
@@ -30,11 +35,11 @@ export default {
 
   components: {
     MainHeader,
-    BackgroundLayer,
     HomeBlock,
     AboutBlock,
     LocationBlock,
     PriceBlock,
+    BackgroundLayer,
   },
 
   data() {
@@ -63,16 +68,18 @@ export default {
       ],
       offsetTop: 1,
       scrollHeight: 0,
+      scrollRatio: 0.5,
+      ratio: 0,
     };
   },
 
   created() {
     window.addEventListener('scroll', () => {
       document.body.style.cssText = `--scroll-top: ${window.scrollY}px`;
-      const ratio = Math.round(window.scrollY / window.innerHeight);
-      // const ratioFloor = Math.floor(window.scrollY / window.innerHeight);
+      const ratio = Math.floor(window.scrollY / window.innerHeight);
+      this.ratio = ratio;
       this.offsetTop = ratio + 1;
-      this.scrollHeight = (window.scrollY - ratio * window.innerHeight) * 0.2;
+      this.scrollHeight = window.scrollY * this.scrollRatio;
     });
   },
 };

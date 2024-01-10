@@ -18,17 +18,26 @@ export default {
       type: Number,
       default: 0,
     },
+    scrollRatio: {
+      type: Number,
+      default: 0,
+    },
+    ratio: {
+      type: Number,
+      default: 0,
+    },
   },
 
   computed: {
     backGroundImg() {
       const bckgUrl = process.env.NODE_ENV === 'production' ? "background: url('/crossfit-first/background/" : "background: url('/background/";
       const bckgrndStyle = 'center center / cover;';
-      const transform = `top: -${this.scrollHeight}px;`;
-      let style = `${bckgUrl}crsft_frst_3.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 1) style = `${bckgUrl}crsft_frst_5.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 2) style = `${bckgUrl}crsft_frst_1.jpg') ${bckgrndStyle}${transform}`;
-      if (this.offsetTop === 3) style = `${bckgUrl}crsft_frst_6.jpg') ${bckgrndStyle}${transform}`;
+      const transform = `top: ${- this.scrollHeight + (this.offsetTop - 1) * this.scrollRatio * window.innerHeight}px;`;
+      const zIndex = this.offsetTop === this.ratio + 2? 'z-index: 2;' : 'z-index: 1;';
+      let style = `${bckgUrl}crsft_frst_3.jpg') ${bckgrndStyle}${transform}${zIndex}`;
+      if (this.offsetTop === 1) style = `${bckgUrl}crsft_frst_5.jpg') ${bckgrndStyle}${transform}${zIndex}`;
+      if (this.offsetTop === 2) style = `${bckgUrl}crsft_frst_1.jpg') ${bckgrndStyle}${transform}${zIndex}`;
+      if (this.offsetTop === 3) style = `${bckgUrl}crsft_frst_6.jpg') ${bckgrndStyle}${transform}${zIndex}`;
       return style;
     },
   },
