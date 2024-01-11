@@ -26,7 +26,59 @@
     width: 100%;
     flex: 2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: #191E23;
+    overflow: hidden;
+  }
+
+  &__team {
+    margin-top: 16px;
+    width: var(--main-width);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__coach {
+    flex: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+      flex-shrink: 0;
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #1ebe1e;
+    }
+
+    &__desc {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__name {
+        color: #1ebe1e;
+        font-size: 1.125em;
+        font-weight: 600;
+      }
+
+      &__post {
+        font-size: 0.875em;
+      }
+
+      &__contact {
+        font-size: 0.875em;
+        text-decoration: underline;
+      }
+    }
   }
 }
