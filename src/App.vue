@@ -14,8 +14,8 @@
     />
     <HomeBlock />
     <AboutBlock />
-    <LocationBlock />
     <PriceBlock />
+    <LocationBlock />
   </div>
 </template>
 
@@ -58,12 +58,12 @@ export default {
         {
           id: 3,
           name: 'Цены',
-          anchor: 'location',
+          anchor: 'price',
         },
         {
           id: 4,
           name: 'Локация',
-          anchor: 'price',
+          anchor: 'location',
         },
       ],
       offsetTop: 1,
