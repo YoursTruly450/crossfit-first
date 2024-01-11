@@ -67,13 +67,56 @@
     }
 
     &__article {
-      margin: 20px 0px 16px;
+      margin: 16px 0px 12px;
       font-size: 1.25em;
     }
 
     &__spheres {
       margin-top: 8px;
       font-size: 1em;
+    }
+  }
+
+  &__abilities {
+    margin-top: 24px;
+    width: var(--main-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__ability {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 36px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &__logo {
+      flex-shrink: 1;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 8px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #afafaf;
+      box-sizing: border-box;
+
+      &-rotate {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &__text {
+      text-transform: uppercase;
+      font-size: 0.875em;
+      font-weight: 700;
+      color: #afafaf;
     }
   }
 }

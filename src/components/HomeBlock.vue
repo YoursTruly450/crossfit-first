@@ -18,6 +18,24 @@
       <p class="home__description__spheres">
         Поможем достичь цели: похудеть, стать сильнее и выносливее, научиться новому
       </p>
+      <div class="home__abilities">
+        <div class="home__ability">
+          <img :src="require('@/assets/samples/strength.jpg')" alt="strength" class="home__ability__logo">
+          <div class="home__ability__text">Сила</div>
+        </div>
+        <div class="home__ability">
+          <img :src="require('@/assets/samples/agility.jpg')" alt="agility" class="home__ability__logo home__ability__logo-rotate">
+          <div class="home__ability__text">Ловкость</div>
+        </div>
+        <div class="home__ability">
+          <img :src="require('@/assets/samples/endurance.jpg')" alt="endurance" class="home__ability__logo home__ability__logo-rotate">
+          <div class="home__ability__text">Выносливость</div>
+        </div>
+        <div class="home__ability">
+          <img :src="require('@/assets/samples/speed.jpg')" alt="speed" class="home__ability__logo home__ability__logo-rotate">
+          <div class="home__ability__text">Скорость</div>
+        </div>
+      </div>
       <!-- <video loop autoplay muted class="home__presentation__video">
         <source :src="require('@/assets/bckg_img/background.mp4')" type="video/mp4">
       </video> -->
