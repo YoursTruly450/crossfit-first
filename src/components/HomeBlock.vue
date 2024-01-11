@@ -8,10 +8,10 @@
       >
       <div class="home__description">
         <h1 class="home__description__title">СПУТНИК | Кроссфит и Функционал в Самаре</h1>
-        <p class="home__description__article">Функциональный тренинг в Самаре. Самая рабочая атмосфера. Только у нас стретчинг на крыше с видом на Волгу.</p>
-        <p class="home__description__spheres">
+        <div class="home__description__article">Функциональный тренинг в Самаре. Самая рабочая атмосфера. Только у нас стретчинг на крыше с видом на Волгу.</div>
+        <div class="home__description__spheres">
           Наши направления: rкроссфит и функционал, стретчинг, тяжёлая атлетика
-        </p>
+        </div>
         <p class="home__description__spheres">
           Поможем достичь цели: похудеть, стать сильнее и выносливее, научиться новому
         </p>

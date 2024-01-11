@@ -11,7 +11,7 @@
 
   &__wrapper {
     width: var(--main-width);
-    flex: 1;
+    flex: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,9 +20,9 @@
 
   &__presentation {
     width: 100%;
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: center;
-    background: #0a0a0a;
+    background: #191E23;
   }
 }

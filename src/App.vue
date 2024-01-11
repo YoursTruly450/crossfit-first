@@ -68,7 +68,7 @@ export default {
       ],
       offsetTop: 1,
       scrollHeight: 0,
-      scrollRatio: 0.5,
+      scrollRatio: 0.6,
       ratio: 0,
     };
   },
