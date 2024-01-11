@@ -57,12 +57,12 @@ export default {
         },
         {
           id: 3,
-          name: 'локация',
+          name: 'Цены',
           anchor: 'location',
         },
         {
           id: 4,
-          name: 'Цены',
+          name: 'Локация',
           anchor: 'price',
         },
       ],
