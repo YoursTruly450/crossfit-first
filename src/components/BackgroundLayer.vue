@@ -30,8 +30,9 @@ export default {
 
   computed: {
     backGroundImg() {
-      const bckgUrl = process.env.NODE_ENV === 'production' ? "background: url('/crossfit-first/background/" : "background: url('/background/";
-      const bckgrndStyle = 'center center / cover;';
+      const bckgUrl = process.env.NODE_ENV === 'production' ? "background-mage: url('/crossfit-first/background/" : "background-image: url('/background/";
+      // const bckgrndStyle = 'center center / cover;';
+      const bckgrndStyle = ';';
       const transform = `top: ${- this.scrollHeight + (this.offsetTop - 1) * this.scrollRatio * window.innerHeight}px;`;
       const zIndex = this.offsetTop === this.ratio + 2? 'z-index: 2;' : 'z-index: 1;';
       let style = `${bckgUrl}crsft_frst_3.jpg') ${bckgrndStyle}${transform}${zIndex}`;
