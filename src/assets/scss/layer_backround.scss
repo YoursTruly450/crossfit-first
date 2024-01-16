@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background: url(~@/assets/bckg_img/crsft_frst_5.jpg);
   background-size: cover;
   background-position: center;
   // background-attachment: scroll;
@@ -21,6 +20,6 @@
 
 @media screen and (max-width: 767px) {
   .layer-background {
-    top: 24px;
+    top: 60px;
   }
 }
