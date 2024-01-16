@@ -88,15 +88,16 @@
     &__link {
       font-size: 12px;
       margin-right: 8px;
+      text-shadow: none;
 
       &:hover {
         color: unset;
-        text-shadow: unset;
+        text-shadow: none;
       }
 
       &-active {
         color: unset;
-        text-shadow: unset;
+        text-shadow: none;
       }
     }
 

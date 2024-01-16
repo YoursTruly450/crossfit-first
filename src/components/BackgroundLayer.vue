@@ -30,7 +30,7 @@ export default {
 
   computed: {
     backGroundImg() {
-      const bckgUrl = process.env.NODE_ENV === 'production' ? "background-mage: url('/crossfit-first/background/" : "background-image: url('/background/";
+      const bckgUrl = process.env.NODE_ENV === 'production' ? "background-image: url('/crossfit-first/background/" : "background-image: url('/background/";
       // const bckgrndStyle = 'center center / cover;';
       const bckgrndStyle = ';';
       const transform = `top: ${- this.scrollHeight + (this.offsetTop - 1) * this.scrollRatio * window.innerHeight}px;`;
