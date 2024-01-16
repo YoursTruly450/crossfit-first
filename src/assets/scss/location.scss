@@ -62,3 +62,46 @@
     }
   }
 }
+
+@media screen and (max-width: 1439px) {
+  .location {
+    &__wrapper {
+      padding: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .location {
+    &__wrapper {
+      flex: 1;
+    }
+
+    &__presentation {
+      flex: none;
+      height: 120px;
+    }
+
+    &__footer {
+      padding: 0 16px;
+      justify-content: center;
+
+      &__title {
+        flex: 1;
+        font-size: 0.875em;
+        text-align: center;
+      }
+
+      &__logo {
+        width: 110px;
+        height: 110px;
+      }
+
+      &__copy {
+        flex: 1;
+        font-size: 0.875em;
+        text-align: center;
+      }
+    }
+  }
+}

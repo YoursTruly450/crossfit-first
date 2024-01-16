@@ -15,9 +15,9 @@
       <div class="home__description__spheres">
         Наши направления: кроссфит и функционал, стретчинг, тяжёлая атлетика
       </div>
-      <p class="home__description__spheres">
-        Поможем достичь цели: похудеть, стать сильнее и выносливее, научиться новому
-      </p>
+      <div class="home__description__spheres">
+        <span>Поможем достичь цели: похудеть, стать сильнее и выносливее, научиться новому</span>
+      </div>
       <div class="home__abilities">
         <div class="home__ability">
           <img :src="require('@/assets/samples/strength.jpg')" alt="strength" class="home__ability__logo">

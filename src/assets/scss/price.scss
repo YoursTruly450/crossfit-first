@@ -82,3 +82,16 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .price {
+    &__block {
+      column-gap: 20px;
+    }
+
+    &__group__item__cost {
+      min-width: 36px;
+      text-align: end;
+    }
+  }
+}

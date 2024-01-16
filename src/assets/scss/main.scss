@@ -85,3 +85,16 @@ a {
     --padding-x: 32px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  html, body {
+    background-color: transparent;
+    @include font-type(12px, 16px, #fffafa, normal);
+  }
+
+  :root {
+    --img-abilities: 90px;
+    --img-coach: 90px;
+    --padding-x: 24px;
+  }
+}
