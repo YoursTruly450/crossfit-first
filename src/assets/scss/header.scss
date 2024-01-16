@@ -88,6 +88,11 @@
     &__link {
       font-size: 12px;
       margin-right: 8px;
+
+      &:hover {
+        color: unset;
+        text-shadow: unset;
+      }
     }
 
     &__logo {
