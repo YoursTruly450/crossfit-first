@@ -85,7 +85,15 @@
 
 @media screen and (max-width: 767px) {
   .price {
+    height: auto;
+    min-height: 100vh;
+
+    &__wrapper {
+      padding: 24px;
+    }
+
     &__block {
+      padding: 24px;
       column-gap: 20px;
     }
 

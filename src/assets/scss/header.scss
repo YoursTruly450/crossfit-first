@@ -79,14 +79,14 @@
 @media screen and (max-width: 767px) {
   .header {
     &__block {
-      padding: 0 12px;
+      padding: 0 16px;
     }
 
     &__links {
       margin-left: 12px;
     }
     &__link {
-      font-size: 12px;
+      font-size: 10px;
       margin-right: 8px;
       text-shadow: none;
 
@@ -104,6 +104,10 @@
     &__logo {
       width: 40px;
       height: 40px;
+    }
+
+    &__contact {
+      margin-left: 8px;
     }
   }
 }
