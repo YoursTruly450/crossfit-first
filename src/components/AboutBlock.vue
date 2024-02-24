@@ -6,13 +6,21 @@
       <p>Они помогут Вам учиться правильной технике, создавать персонализированные программы тренировок и обеспечивать безопасность во время занятий.</p>
     </div>
     <div class="about__presentation">
-      <h2>Знакомьтесь с нашей командой</h2>
+      <h2>Наша команда</h2>
       <div class="about__team">
         <div class="about__coach">
           <img :src="require('@/assets/team/anvar.jpg')" alt="Анвар" class="about__coach__logo" />
           <div class="about__coach__desc">
             <div class="about__coach__desc__name">Анвар Иранов</div>
             <div class="about__coach__desc__post">Главный тренер</div>
+            <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
+          </div>
+        </div>
+        <div class="about__coach">
+          <img :src="require('@/assets/team/ksenia.jpg')" alt="Ксения" class="about__coach__logo" />
+          <div class="about__coach__desc">
+            <div class="about__coach__desc__name">Ксения Пестрякова</div>
+            <div class="about__coach__desc__post">Старший тренер</div>
             <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
           </div>
         </div>

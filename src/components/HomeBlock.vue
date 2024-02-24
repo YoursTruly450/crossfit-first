@@ -2,7 +2,7 @@
   <div class="home" id="home">
     <div class="home__wrapper">
       <img
-        :src="require('@/assets/bckg_img/sputnik_logo.png')"
+        :src="require('@/assets/bckg_img/logo2.png')"
         alt="спутник"
         class="home__logo"
       >

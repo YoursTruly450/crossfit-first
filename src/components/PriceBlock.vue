@@ -3,7 +3,7 @@
     <div class="price__wrapper">
       <h2>Откройте новые горизонты своей физической, умственной и эмоциональной силы.</h2>
       <p class="price__join">Занимаясь в «Спутнике», вы можете быть уверены, что всегда получите методику и поддержку, что поможет вам не сбиться с выбранного пути.</p>
-      <a href="https://telegram.me/SputnikSamaraBot" target="_blank" class="price__subscribe">Ждём всех на тренировки!</a>
+      <p class="price__subscribe">Ждём всех на тренировки <a href="https://telegram.me/SputnikSamaraBot" target="_blank" class="price__subscribe">(записаться)</a></p>
     </div>
     <div class="price__presentation">
       <div class="price__block">

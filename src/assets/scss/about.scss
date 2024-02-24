@@ -84,7 +84,26 @@
 }
 
 @media screen and (max-width: 767px) {
-  .about__coach__desc__name {
-    font-size: 1em;
+  .about {
+    height: auto;
+
+    &__wrapper {
+      padding: 24px;
+    }
+
+    &__coach__desc__name {
+      font-size: 1em;
+    }
+
+    &__presentation {
+      padding: 24px 0px;
+    }
+
+    &__team {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 12px;
+      column-gap: 12px;
+    }
   }
 }
