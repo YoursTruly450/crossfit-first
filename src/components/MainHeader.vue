@@ -5,6 +5,7 @@
         :src="require('@/assets/icons/logo.jpg')" 
         alt="спутник" 
         class="header__logo"
+        @click="goToMaster"
       >
       <div v-if="links.length > 0" class="header__links">
         <a
@@ -55,6 +56,12 @@ export default {
     offsetTop: {
       type: Number,
       default: 1,
+    },
+  },
+
+  methods: {
+    goToMaster() {
+      this.$router.push({ name: 'master' });
     },
   },
 };

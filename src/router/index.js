@@ -10,14 +10,15 @@ const routes = [
     component: () => import(`@/views/MainView.vue`),
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/master',
+    name: 'master',
     component: () => import(`@/views/AdminView.vue`),
   },
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  // base: '/crossfit-first',
   base: process.env.BASE_URL,
   routes,
 });
