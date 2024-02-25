@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiKey = 'AIzaSyAOKy0l4lScZDQS2tKkHZFUsrNLTXbYqu8';
+const apiKey = `${process.env.VUE_APP_API_KEY}`;
 
 export default ({
   state: {
