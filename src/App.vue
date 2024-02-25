@@ -14,6 +14,7 @@
     />
     <HomeBlock />
     <AboutBlock />
+    <StretchingBlock />
     <PriceBlock />
     <LocationBlock />
   </div>
@@ -25,6 +26,7 @@ import '@/assets/scss/main.scss';
 import MainHeader from '@/components/MainHeader.vue';
 import HomeBlock from '@/components/HomeBlock.vue';
 import AboutBlock from '@/components/AboutBlock.vue';
+import StretchingBlock from '@/components/StretchingBlock.vue';
 import LocationBlock from '@/components/LocationBlock.vue';
 import PriceBlock from '@/components/PriceBlock.vue';
 
@@ -38,6 +40,7 @@ export default {
     HomeBlock,
     AboutBlock,
     LocationBlock,
+    StretchingBlock,
     PriceBlock,
     BackgroundLayer,
   },
@@ -57,11 +60,16 @@ export default {
         },
         {
           id: 3,
+          name: 'Стретчинг',
+          anchor: 'stretching',
+        },
+        {
+          id: 4,
           name: 'Цены',
           anchor: 'price',
         },
         {
-          id: 4,
+          id: 5,
           name: 'Локация',
           anchor: 'location',
         },

@@ -89,7 +89,13 @@
     min-height: 100vh;
 
     &__wrapper {
-      padding: 24px;
+      padding: 60px 24px;
+      background: url('../bckg_img/crsft_frst_13.jpg') center center / cover;
+
+      & h2, p {
+        background-color: rgba(0, 0, 0, 0.1);
+        text-shadow: 1px 1px 2px black;
+      }
     }
 
     &__block {
