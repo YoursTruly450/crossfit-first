@@ -13,7 +13,7 @@
           <div class="about__coach__desc">
             <div class="about__coach__desc__name">Анвар Иранов</div>
             <div class="about__coach__desc__post">Главный тренер</div>
-            <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
+            <!-- <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a> -->
           </div>
         </div>
         <div class="about__coach">
@@ -21,7 +21,7 @@
           <div class="about__coach__desc">
             <div class="about__coach__desc__name">Ксения Пестрякова</div>
             <div class="about__coach__desc__post">Старший тренер</div>
-            <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
+            <!-- <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a> -->
           </div>
         </div>
         <div class="about__coach">
@@ -29,7 +29,7 @@
           <div class="about__coach__desc">
             <div class="about__coach__desc__name">Ольга Пыряева</div>
             <div class="about__coach__desc__post">Тяжелая атлетика</div>
-            <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
+            <!-- <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a> -->
           </div>
         </div>
         <div class="about__coach">
@@ -37,7 +37,7 @@
           <div class="about__coach__desc">
             <div class="about__coach__desc__name">Анастасия Ермакова</div>
             <div class="about__coach__desc__post">Стретчинг</div>
-            <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a>
+            <!-- <a href="tel:+79272010130" class="about__coach__desc__contact">+7 (927) 201-01-30</a> -->
           </div>
         </div>
       </div>

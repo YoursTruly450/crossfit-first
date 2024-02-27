@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="home__presentation">
-      <div class="home__description__article">Функциональный тренинг в Самаре. Самая рабочая атмосфера.</div>
+      <div class="home__description__article">Функциональный тренинг в Самаре. Самые эффективные тренировки.</div>
       <div class="home__description__spheres">
         Наши направления: кроссфит и функционал, стретчинг, тяжёлая атлетика
       </div>
