@@ -30,6 +30,7 @@
 import { cloneDeep } from 'lodash';
 
 import '@/assets/scss/admin.scss';
+
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
