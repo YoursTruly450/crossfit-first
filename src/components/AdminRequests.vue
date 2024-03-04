@@ -1,7 +1,7 @@
 <template>
   <div class="admin__wrapper">
-    <button @click="onLogout" class="admin__button">Logout</button>
-    <button @click="goToMainPage" class="admin__button">Return to site</button>
+    <button @click="onLogout" class="admin__button">Выйти</button>
+    <button @click="goToMainPage" class="admin__button">Вернуться на сайт</button>
   </div>
 </template>
 
@@ -10,6 +10,13 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'AdminRequests',
+
+  props: {
+    user: {
+      type: Object,
+      default: null,
+    },
+  },
 
   methods: {
     ...mapActions(['logout']),

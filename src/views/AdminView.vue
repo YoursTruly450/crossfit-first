@@ -1,7 +1,7 @@
 <template>
   <div class="admin">
     <AdminLoginBlock v-if="!user" />
-    <AdminRequests v-else />
+    <AdminRequests v-else :user="user" />
   </div>
 </template>
 

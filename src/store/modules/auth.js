@@ -4,7 +4,7 @@ const apiKey = process.env.VUE_APP_API_KEY;
 
 export default ({
   state: {
-    user: null,
+    user: JSON.parse(localStorage.getItem('user')) || null,
     error: null,
 	},
 	getters: {
@@ -28,17 +28,21 @@ export default ({
       ctx.commit('setError', null);
       const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
       return axios.post(url, form)
-        .then((response) => {
-          const user = response.data;
-          ctx.commit('setUser', user);
+        .then(({ data }) => {
+          localStorage.setItem('user', JSON.stringify(data));
+          ctx.commit('setUser', data);
+          axios.defaults.headers.common.Authorization = data.idToken;
         })
         .catch(() => {
+          ctx.commit('setUser', null);
           ctx.commit('setError', 'Invalid login data');
         });
     },
 
     logout(ctx) {
+      delete axios.defaults.headers.common.Authorization;
       ctx.commit('setUser', null);
+      localStorage.clear();
     },
   },
 })

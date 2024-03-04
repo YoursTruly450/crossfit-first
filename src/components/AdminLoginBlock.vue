@@ -1,20 +1,20 @@
 <template>
   <div class="admin__form">
-    <label for="mail" class="admin__label">Email</label>
+    <label for="mail" class="admin__label">Мэйл</label>
     <input
       id="mail"
       v-model="form.email"
       class="admin__input"
     />
-    <label for="password" class="admin__label">Password</label>
+    <label for="password" class="admin__label">Пароль</label>
     <input
       id="password"
       v-model="form.password"
       type="password"
       class="admin__input"
     />
-    <button @click="onLogin" class="admin__button">Sign in</button>
-    <button @click="goToMainPage" class="admin__button">Return to site</button>
+    <button @click="onLogin" class="admin__button">Войти</button>
+    <button @click="goToMainPage" class="admin__button">Вернуться на сайт</button>
     <p v-if="error" class="admin__error">{{ error }}</p>
   </div>
 </template>
