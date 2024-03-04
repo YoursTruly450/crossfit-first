@@ -91,7 +91,7 @@ export default {
       timeoutId: null,
       timerId: null,
       timer: 0,
-      delay: 20,
+      delay: 30,
       sended: false,
     };
   },
@@ -126,7 +126,7 @@ export default {
         this.setInvalidMessage();
         return;
       }
-      if (!this.message) {
+      if (!this.sended) {
         this.createRequest(this.request)
         .then(() => {
           this.request = cloneDeep(this.defaultRequest);
