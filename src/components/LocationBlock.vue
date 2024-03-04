@@ -121,6 +121,7 @@ export default {
     ...mapActions(['createRequest']),
 
     sendRequest() {
+      if (this.invalid) this.setInvalidMessage();
       if (!this.message && !this.invalid) {
         this.createRequest(this.request)
         .then(() => {
@@ -131,6 +132,10 @@ export default {
       } else {
         this.message = `Для повторной отправки подождите ${this. delay - this.timer} сек`;
       }
+    },
+
+    setInvalidMessage() {
+      this.message = 'Заполните обязательные поля';
     },
 
     startTimer() {
@@ -156,7 +161,7 @@ export default {
       immediate: true,
       handler(nv) {
         if (nv) {
-          this.message = 'Заполните обязательные поля';
+          this.setInvalidMessage();
         } else {
           this.message = '';
         }
