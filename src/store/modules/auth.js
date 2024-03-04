@@ -31,7 +31,7 @@ export default ({
         .then(({ data }) => {
           localStorage.setItem('user', JSON.stringify(data));
           ctx.commit('setUser', data);
-          axios.defaults.headers.common.Authorization = data.idToken;
+          // axios.defaults.headers.common.Authorization = data.idToken;
         })
         .catch(() => {
           ctx.commit('setUser', null);
@@ -40,7 +40,7 @@ export default ({
     },
 
     logout(ctx) {
-      delete axios.defaults.headers.common.Authorization;
+      // delete axios.defaults.headers.common.Authorization;
       ctx.commit('setUser', null);
       localStorage.clear();
     },

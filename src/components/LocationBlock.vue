@@ -92,6 +92,7 @@ export default {
       timerId: null,
       timer: 0,
       delay: 20,
+      sended: false,
     };
   },
 
@@ -121,7 +122,7 @@ export default {
     ...mapActions(['createRequest']),
 
     sendRequest() {
-      if (this.invalid) {
+      if (this.invalid && !this.sended) {
         this.setInvalidMessage();
         return;
       }
@@ -130,6 +131,7 @@ export default {
         .then(() => {
           this.request = cloneDeep(this.defaultRequest);
           this.message = 'Заявка отправлена';
+          this.sended = true;
           this.startTimer();
         });
       } else {
@@ -147,6 +149,7 @@ export default {
       }, 1000);
       this.timeoutId = setTimeout(() => {
         this.message = '';
+        this.sended = false;
         clearInterval(this.timerId);
         this.timer = 0;
       }, this.delay * 1000);

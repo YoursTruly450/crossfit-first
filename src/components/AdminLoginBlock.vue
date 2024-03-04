@@ -32,12 +32,12 @@ export default {
       form: {
         email: 'crossfit.sputnik@gmail.com',
         password: '',
-        returnSecureToken: false,
+        returnSecureToken: true,
       },
       defaultForm: {
         email: 'crossfit.sputnik@gmail.com',
         password: '',
-        returnSecureToken: false,
+        returnSecureToken: true,
       },
     };
   },

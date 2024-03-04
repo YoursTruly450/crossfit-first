@@ -10,17 +10,19 @@ export default ({
     requestError: '',
 	},
 	getters: {
-    reuqests(state) {
-      return state.reuqests;
+    requests(state) {
+      return state.requests;
     },
+  
     requestError(state) {
       return state.requestError;
     },
 	},
 	mutations: {
     setRequests(state, data) {
-      state.reuqests = data;
+      state.requests = data;
     },
+
     setRequestError(state, error) {
       state.requestError = error;
     },
@@ -29,11 +31,24 @@ export default ({
     createRequest(ctx, request) {
       ctx.commit('setRequestError', '');
       return axios.post(`${url}requests.json`, request)
-        .then((response) => response)
-        .catch((error) => {
+        .then(() => {})
+        .catch(() => {
           ctx.commit('setRequestError', 'Произошла ошибка при отправке формы, попробуйте позже');
-          return error;
         });
+    },
+
+    getRequests(ctx, token) {
+      return axios.get(`${url}requests.json`, { params: { auth: token } })
+        .then(({ data }) => {
+          ctx.commit('setRequests', data);
+        })
+        .catch(() => {
+          ctx.commit('setRequestError', 'Произошла ошибка при отправке формы, попробуйте позже');
+        });
+    },
+
+    deleteRequest(ctx, id) {
+      return axios.delete(`${url}requests/${id}.json`)
     },
   },
 })
