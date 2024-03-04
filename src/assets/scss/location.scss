@@ -101,6 +101,10 @@
       box-sizing: border-box;
       border-radius: 8px;
       border: none;
+
+      &-error {
+        border: 2px solid red;
+      }
     }
 
     &__button {

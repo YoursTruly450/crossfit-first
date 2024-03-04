@@ -18,6 +18,7 @@
             v-model="request.name"
             type="text"
             class="location__contacts__input"
+            :class="{'location__contacts__input-error': invalidName}"
           >
         </div>
         <div class="location__contacts__row">
@@ -29,6 +30,7 @@
             v-model="request.contact"
             type="text"
             class="location__contacts__input"
+            :class="{'location__contacts__input-error': invalidContact}"
           >
         </div>
         <div class="location__contacts__row">
@@ -49,7 +51,7 @@
           >
             Отправить
           </button>
-          <span class="location__contacts__alert" :class="{ 'location__contacts__alert-error': requestError }">{{ message }}</span>
+          <span class="location__contacts__alert" :class="{ 'location__contacts__alert-error': requestError || invalid }">{{ message }}</span>
         </div>
       </div>
     </div>
@@ -94,7 +96,19 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['requestError']), 
+    ...mapGetters(['requestError']),
+
+    invalidName() {
+      return !this.request.name;
+    },
+
+    invalidContact() {
+      return !this.request.contact;
+    },
+
+    invalid() {
+      return this.invalidContact || this.invalidName;
+    },
   },
 
   beforeDestroy() {
@@ -107,7 +121,7 @@ export default {
     ...mapActions(['createRequest']),
 
     sendRequest() {
-      if (!this.message) {
+      if (!this.message && !this.invalid) {
         this.createRequest(this.request)
         .then(() => {
           this.request = cloneDeep(this.defaultRequest);
@@ -136,6 +150,17 @@ export default {
       if (nv) {
         this.message = nv;
       }
+    },
+
+    invalid: {
+      immediate: true,
+      handler(nv) {
+        if (nv) {
+          this.message = 'Заполните обязательные поля';
+        } else {
+          this.message = '';
+        }
+      },
     },
   },
 };
