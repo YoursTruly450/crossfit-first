@@ -7,7 +7,7 @@
         class="admin__request"
       >
         <span>{{ `Имя: ${item.name}` }}</span>
-        <span>{{ `Контакт: ${item.name}` }}</span>
+        <span>{{ `Контакт: ${item.contact}` }}</span>
         <span>{{ `Сообщение: ${item.message}` }}</span>
         <button class="admin__button" @click="deleteItem(item)">удалить</button>
       </div>
