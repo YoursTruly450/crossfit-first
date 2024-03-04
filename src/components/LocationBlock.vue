@@ -121,8 +121,11 @@ export default {
     ...mapActions(['createRequest']),
 
     sendRequest() {
-      if (this.invalid) this.setInvalidMessage();
-      if (!this.message && !this.invalid) {
+      if (this.invalid) {
+        this.setInvalidMessage();
+        return;
+      }
+      if (!this.message) {
         this.createRequest(this.request)
         .then(() => {
           this.request = cloneDeep(this.defaultRequest);
