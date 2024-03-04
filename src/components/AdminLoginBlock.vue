@@ -1,6 +1,6 @@
 <template>
   <div class="admin__form">
-    <label for="mail" class="admin__label">Мэйл</label>
+    <label for="mail" class="admin__label">Логин</label>
     <input
       id="mail"
       v-model="form.email"
