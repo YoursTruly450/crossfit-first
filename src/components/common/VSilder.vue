@@ -19,7 +19,7 @@
 <script>
 import '@/assets/scss/slider.scss';
 
-const delay = 10000;
+const delay = 5000;
 
 export default {
   name: 'VSlider',
@@ -49,6 +49,8 @@ export default {
     if (this.block) {
       this.block.removeEventListener('mousedown', this.onMouseDown);
       this.block.removeEventListener('mouseup', this.onMouseUp);
+      this.block.removeEventListener('touchstart', this.onMouseDown);
+      this.block.removeEventListener('touchend', this.onMouseUp);
     }
     if (this.timerId) {
       clearInterval(this.timerId);
@@ -67,6 +69,8 @@ export default {
       if (this.block) {
         this.block.addEventListener('mousedown', this.onMouseDown);
         this.block.addEventListener('mouseup', this.onMouseUp);
+        this.block.addEventListener('touchstart', this.onMouseDown);
+        this.block.addEventListener('touchend', this.onMouseUp);
       }
     },
 
@@ -100,6 +104,9 @@ export default {
     setCurrentSlideVisibility() {
       this.slides.forEach((slide, index) => {
         slide.style.display = index === this.currentIndex ? 'flex' : 'none';
+        setTimeout(() => {
+          slide.style.visibility = index === this.currentIndex ? 'visible' : 'collapse';
+        }, 0);
       });
     },
 
