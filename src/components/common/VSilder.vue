@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div class="slider" :class="{'slider_swipping': isSwipping}">
     <div ref="slidesBlock" class="slider__slot">
       <slot></slot>
     </div>
@@ -19,14 +19,23 @@
 <script>
 import '@/assets/scss/slider.scss';
 
+const delay = 10000;
+
 export default {
   name: 'VSlider',
 
   data() {
     return {
+      block: null,
       currentIndex: 0,
       slidesCount: 0,
       slides: [],
+      position: {
+        x: 0,
+        y: 0,
+      },
+      isSwipping: false,
+      timerId: null,
     };
   },
 
@@ -36,12 +45,58 @@ export default {
     this.$watch('currentIndex', this.currentIndexHandler, { immediate: true });
   },
 
+  beforeDestroy() {
+    if (this.block) {
+      this.block.removeEventListener('mousedown', this.onMouseDown);
+      this.block.removeEventListener('mouseup', this.onMouseUp);
+    }
+    if (this.timerId) {
+      clearInterval(this.timerId);
+    }
+  },
+
   methods: {
     initSlides() {
+      this.block = this.$refs.slidesBlock;
       this.slides = [...this.$refs.slidesBlock.childNodes];
       this.slidesCount = this.slides.length;
+      this.addListeners();
     },
 
+    addListeners() {
+      if (this.block) {
+        this.block.addEventListener('mousedown', this.onMouseDown);
+        this.block.addEventListener('mouseup', this.onMouseUp);
+      }
+    },
+
+    onMouseDown(event) {
+      this.position.x = event.screenX;
+      this.isSwipping = true;
+    },
+
+    onMouseUp(event) {
+      if (event.screenX < this.position.x) {
+        this.indexAdd();
+      } 
+      if  (event.screenX > this.position.x) {
+        this.indexSub();
+      }
+      this.isSwipping = false;
+      this.position.x = 0;
+    },
+
+    indexAdd () {
+      if (this.currentIndex < this.slidesCount - 1) {
+        this.currentIndex++;
+      }
+    },
+
+    indexSub() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+      }
+    },
     setCurrentSlideVisibility() {
       this.slides.forEach((slide, index) => {
         slide.style.display = index === this.currentIndex ? 'flex' : 'none';
@@ -50,10 +105,28 @@ export default {
 
     currentIndexHandler() {
       this.setCurrentSlideVisibility();
+      this.resetTimer();
     },
 
     setCurrentIndex(index) {
       this.currentIndex = index;
+    },
+
+    initSliding() {
+      this.timerId = setInterval(() => {
+        if (this.currentIndex < this.slidesCount - 1) {
+          this.currentIndex++;
+        } else {
+          this.currentIndex = 0;
+        }
+      }, delay);
+    },
+
+    resetTimer() {
+      clearInterval(this.timerId);
+      setTimeout(() => {
+        this.initSliding();
+      }, 0);
     },
   },
 }
