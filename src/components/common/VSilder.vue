@@ -34,6 +34,10 @@ export default {
         x: 0,
         y: 0,
       },
+      move: {
+        x: 0,
+        y: 0,
+      },
       isSwipping: false,
       timerId: null,
     };
@@ -50,6 +54,7 @@ export default {
       this.block.removeEventListener('mousedown', this.onMouseDown);
       this.block.removeEventListener('mouseup', this.onMouseUp);
       this.block.removeEventListener('touchstart', this.onMouseDown);
+      this.block.removeEventListener('touchmove', this.onTouchMove);
       this.block.removeEventListener('touchend', this.onMouseUp);
     }
     if (this.timerId) {
@@ -69,9 +74,31 @@ export default {
       if (this.block) {
         this.block.addEventListener('mousedown', this.onMouseDown);
         this.block.addEventListener('mouseup', this.onMouseUp);
-        this.block.addEventListener('touchstart', this.onMouseDown);
-        this.block.addEventListener('touchend', this.onMouseUp);
+        this.block.addEventListener('touchstart', this.onTouchStart);
+        this.block.addEventListener('touchmove', this.onTouchMove);
+        this.block.addEventListener('touchend', this.onTouchEnd);
       }
+    },
+
+    onTouchStart(event) {
+      this.onMouseDown(event.touches[0]);
+    },
+
+    onTouchMove(event) {
+      if (this.isSwipping) {
+        this.move.x = event.touches[0].screenX;
+      }
+    },
+
+    onTouchEnd() {
+      if (this.move.x < this.position.x && this.isSwipping) {
+        this.indexAdd();
+      } 
+      if  (this.move.x > this.position.x && this.isSwipping) {
+        this.indexSub();
+      }
+      this.isSwipping = false;
+      this.move.x = 0;
     },
 
     onMouseDown(event) {

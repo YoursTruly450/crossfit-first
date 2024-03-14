@@ -46,7 +46,6 @@
   &__block {
     width: var(--main-width);
     display: flex;
-    flex-direction: column;
     row-gap: 24px;
     padding: 0px 24px;
     box-sizing: border-box;
@@ -64,12 +63,17 @@
     &__wrapper {
       padding: 24px;
       justify-content: space-around;
-      background: url('../bckg_img/crsft_frst_14.jpg') center center / cover;
+      background: url('../bckg_img/crsft_frst_16.JPG') center center / cover;
 
       & h2, p {
         background-color: rgba(0, 0, 0, 0.1);
         text-shadow: 1px 1px 2px black;
       }
+    }
+
+    &__presentation {
+      height: 400px;
+      flex: unset;
     }
 
     &__block {
