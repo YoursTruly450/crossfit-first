@@ -20,6 +20,10 @@
     overflow: hidden;
     padding: 0 var(--padding-x);
     box-sizing: border-box;
+
+    & p {
+      text-align: center;
+    }
   }
 
   &__presentation {

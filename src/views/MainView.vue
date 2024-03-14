@@ -60,7 +60,7 @@ export default {
         },
         {
           id: 3,
-          name: 'Стретчинг',
+          name: 'Направления',
           anchor: 'stretching',
         },
         {
