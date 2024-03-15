@@ -76,6 +76,22 @@
   }
 }
 
+@media screen and (max-width: 1439px) {
+  .header {
+    &__link {
+      &:hover {
+        color: #fafafa;
+        text-shadow: 0 0 8px #fafafa;
+      }
+  
+      &-active:hover {
+        color: #1ebe1e;
+        text-shadow: 0 0 8px #fafafa;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .header {
     &__block {
