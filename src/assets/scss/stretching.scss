@@ -45,22 +45,46 @@
 
   &__block {
     width: var(--main-width);
+    height: 100%;
     display: flex;
-    row-gap: 24px;
+    column-gap: 12px;
     padding: 0px 24px;
     box-sizing: border-box;
     transition: all 1.5s 0.3s;
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    &__desc {
+      position: relative;
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px;
+      row-gap: 16px;
+      overflow: hidden;
+    }
   }
 }
 
-@media screen and (max-width: 1439px) {}
+@media screen and (max-width: 1439px) {
+
+}
 
 @media screen and (max-width: 767px) {
   .stretching {
     height: auto;
-    min-height: 100vh;
+    // min-height: 100vh;
 
     &__wrapper {
+      flex: unset;
+      height: 300px;
       padding: 24px;
       justify-content: space-around;
       background: url('../bckg_img/crsft_frst_16.JPG') center center / cover;
@@ -72,12 +96,20 @@
     }
 
     &__presentation {
-      height: 400px;
+      height: 550px;
       flex: unset;
     }
 
     &__block {
-      padding: 24px;
+      padding: 12px 0px;
+      flex-direction: column;
+      row-gap: 12px;
+
+      &__img {
+        width: auto;
+        height: 250px;
+        object-fit: contain;
+      }
     }
   }
 }

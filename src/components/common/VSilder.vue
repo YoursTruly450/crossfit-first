@@ -19,10 +19,15 @@
 <script>
 import '@/assets/scss/slider.scss';
 
-const delay = 5000;
-
 export default {
   name: 'VSlider',
+
+  props: {
+    delay: {
+      type: Number,
+      default: 15000,
+    },
+  },
 
   data() {
     return {
@@ -153,7 +158,7 @@ export default {
         } else {
           this.currentIndex = 0;
         }
-      }, delay);
+      }, this.delay);
     },
 
     resetTimer() {
