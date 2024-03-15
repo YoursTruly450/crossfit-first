@@ -57,6 +57,12 @@
       height: 100%;
       object-fit: contain;
       object-position: center center;
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
 
     &__desc {
@@ -69,6 +75,10 @@
       padding: 8px;
       row-gap: 16px;
       overflow: hidden;
+
+      & h2 {
+        text-align: center;
+      }
     }
   }
 }
