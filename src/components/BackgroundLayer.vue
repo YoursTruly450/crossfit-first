@@ -38,7 +38,7 @@ export default {
       let style = `${bckgUrl}crsft_frst_15.jpg') ${bckgrndStyle}${transform}${zIndex}`;
       if (this.offsetTop === 1) style = `${bckgUrl}crsft_frst_11.jpg') ${bckgrndStyle}${transform}${zIndex}`;
       if (this.offsetTop === 2) style = `${bckgUrl}crsft_frst_12.jpg') ${bckgrndStyle}${transform}${zIndex}`;
-      if (this.offsetTop === 3) style = `${bckgUrl}crsft_frst_16.jpg') ${bckgrndStyle}${transform}${zIndex}`;
+      if (this.offsetTop === 3) style = `${bckgUrl}crsft_frst_16.JPG') ${bckgrndStyle}${transform}${zIndex}`;
       if (this.offsetTop === 4) style = `${bckgUrl}crsft_frst_13.jpg') ${bckgrndStyle}${transform}${zIndex}`;
       return style;
     },
